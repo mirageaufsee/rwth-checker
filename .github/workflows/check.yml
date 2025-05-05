@@ -5,7 +5,7 @@ name: Check Appointments
 on:
   schedule:
     - cron: "*/5 * * * *"  # 每5分钟运行一次（GitHub 不支持30秒间隔）
-  workflow_dispatch:       # 允许你手动点击运行
+  #workflow_dispatch:       # 允许你手动点击运行
 
 jobs:
   run-script:
