@@ -3,6 +3,9 @@ import requests
 from playwright.sync_api import Playwright, sync_playwright, TimeoutError
 
 # update to trigger schedule
+import datetime
+print("Script ran at:", datetime.datetime.now())
+
 
 BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
 CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
