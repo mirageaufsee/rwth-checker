@@ -5,11 +5,11 @@ name: Check Appointments
 on:
   schedule:
     - cron: "*/5 * * * *"  # 每5分钟运行一次（GitHub 不支持30秒间隔）
-  #workflow_dispatch:       # 允许你手动点击运行
+  workflow_dispatch:       # 允许你手动点击运行
 
 jobs:
   run-script:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
@@ -18,7 +18,7 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.10.13'
+          python-version: '3.'
 
       - name: Install dependencies
         run: |
