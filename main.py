@@ -7,8 +7,11 @@ import datetime
 print("Script ran at:", datetime.datetime.now())
 
 
-BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
-CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
+#BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+#CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
+
+BOT_TOKEN = "7082166080:AAFQiHexgZZHkv-80uMtOwOu59_vuUURrig"
+CHAT_ID = "6443289918"
 
 def send_telegram_message(message):
     url = f"https://api.telegram.org/bot{BOT_TOKEN}/sendMessage"
