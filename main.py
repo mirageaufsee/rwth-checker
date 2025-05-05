@@ -34,7 +34,7 @@ def run(playwright: Playwright):
     try:
         page.get_by_role("heading", name="Kein freier Termin verfügbar", exact=True).wait_for(timeout=3000)
         print("❌ 没有空位")
-        send_telegram_message("test")
+        #send_telegram_message("test")
     except TimeoutError:
         print("✅ 现在可能有空位，发送通知")
         send_telegram_message("📢 现在有空位了！请尽快去预约：https://termine.staedteregion-aachen.de/auslaenderamt/")
