@@ -1,3 +1,5 @@
+# Triggering schedule activation
+
 name: Check Appointments
 
 on:
