@@ -14,7 +14,7 @@ def send_telegram_message(message):
     requests.post(url, data=payload)
 
 def check_rwth(page):
-    print("🔍 检查 RWTH 学生预约...")
+    #print("🔍 检查 RWTH 学生预约...")
     page.goto("https://termine.staedteregion-aachen.de/auslaenderamt/")
     page.get_by_role("button", name="Aufenthaltsangelegenheiten").click()
     page.get_by_role("tab", name="RWTH - Außenstelle Super C").click()
@@ -25,13 +25,13 @@ def check_rwth(page):
 
     try:
         page.get_by_role("heading", name="Kein freier Termin verfügbar", exact=True).wait_for(timeout=3000)
-        print("❌ RWTH 无空位")
+        #print("❌ RWTH 无空位")
     except TimeoutError:
-        print("✅ RWTH 有空位，发送通知")
+        #print("✅ RWTH 有空位，发送通知")
         send_telegram_message("🎓 RWTH 现在有空位了！快预约：https://termine.staedteregion-aachen.de/auslaenderamt/")
 
 def check_team1(page):
-    print("🔍 检查 Team 1（Erteilung/Verlängerung Aufenthalt）预约...")
+    #print("🔍 检查 Team 1（Erteilung/Verlängerung Aufenthalt）预约...")
     page.goto("https://termine.staedteregion-aachen.de/auslaenderamt/")
     page.get_by_role("button", name="Aufenthaltsangelegenheiten").click()
     page.get_by_role("tab", name="Aufenthalt", exact=True).click()
@@ -42,9 +42,9 @@ def check_team1(page):
 
     try:
         page.get_by_role("heading", name="Kein freier Termin verfügbar", exact=True).wait_for(timeout=3000)
-        print("❌ Team 1 无空位")
+        #print("❌ Team 1 无空位")
     except TimeoutError:
-        print("✅ Team 1 有空位，发送通知")
+        #print("✅ Team 1 有空位，发送通知")
         send_telegram_message("🔥 Team 1 现在有空位了！快预约：https://termine.staedteregion-aachen.de/auslaenderamt/")
 
 def run(playwright: Playwright):
