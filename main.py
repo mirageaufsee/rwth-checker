@@ -28,7 +28,7 @@ def check_rwth(page):
         #print("❌ RWTH 无空位")
     except TimeoutError:
         #print("✅ RWTH 有空位，发送通知")
-        send_telegram_message("🎓 RWTH 现在有空位了！快预约：https://termine.staedteregion-aachen.de/auslaenderamt/")
+        send_telegram_message("🎓 SuperC 现在有空位了！快预约：https://termine.staedteregion-aachen.de/auslaenderamt/")
 
 def check_team1(page):
     #print("🔍 检查 Team 1（Erteilung/Verlängerung Aufenthalt）预约...")
@@ -45,7 +45,7 @@ def check_team1(page):
         #print("❌ Team 1 无空位")
     except TimeoutError:
         #print("✅ Team 1 有空位，发送通知")
-        send_telegram_message("🔥 Team 1 现在有空位了！快预约：https://termine.staedteregion-aachen.de/auslaenderamt/")
+        send_telegram_message("🔥 主火 现在有空位了！快预约：https://termine.staedteregion-aachen.de/auslaenderamt/")
 
 def run(playwright: Playwright):
     browser = playwright.chromium.launch(headless=True)
